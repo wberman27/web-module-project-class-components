@@ -7,7 +7,22 @@ import './components/Todo.css'
 const tasks = [
   {
     task: 'Learn React',
-    id: Date.now(),
+    id: 1,
+    completed: false
+  },
+  {
+    task: 'Todo Styling',
+    id: 12,
+    completed: false
+  },
+  {
+    task: 'Study Class Components',
+    id: 123,
+    completed: false
+  },
+  {
+    task: 'Graduate Lambda',
+    id: 1234,
     completed: false
   }
 ]
