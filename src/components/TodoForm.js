@@ -9,12 +9,12 @@ class TodoForm extends React.Component {
     }
 
     handleChanges = e => {
-        this.setState({[e.target.name]: e.target.value})
+        this.setState({[e.target.name]: e.target.value}) //setState to control target input value
     };
 
     submit = (e) => {
-        e.preventDefault();
-        this.props.addTask(this.state.taskText)
+        e.preventDefault(); //prevents refresh default
+        this.props.addTask(this.state.taskText) //add task from taskText
         this.setState({
             taskText: '', //resets form
         })
