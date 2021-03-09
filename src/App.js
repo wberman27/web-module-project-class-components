@@ -1,16 +1,90 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
+import './components/Todo.css'
+
+const tasks = [
+  {
+    task: 'Learn React',
+    id: 1,
+    completed: false
+  },
+  {
+    task: 'Todo Styling',
+    id: 12,
+    completed: false
+  },
+  {
+    task: 'Study Class Components',
+    id: 123,
+    completed: false
+  },
+  {
+    task: 'Graduate Lambda',
+    id: 1234,
+    completed: false
+  }
+]
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
+  //
+  constructor() {
+    super();
+    this.state = {
+      tasks: tasks,
+    }
+  }
+
+  toggleTask = (clickedId) =>{
+    this.setState({
+      tasks: this.state.tasks.map((item)=>{
+        return item.id === clickedId ? {...item, completed: !item.completed} : item;
+      })
+    })
+  }
+
+  addTask = (taskName) =>{
+    const newTask = {
+      task: taskName,
+      id: Date.now(),
+      completed: false
+    }
+    this.setState({
+      tasks: [...this.state.tasks, newTask],
+    })
+  }
+
+
+  clearCompleted = (tasks) =>{
+    this.setState({
+      tasks: this.state.tasks.filter(item => item.completed === false)
+    })
+  }
+
+
+
+
+
   render() {
     return (
-      <div>
+      <div className = "todoApp">
+        <img className= 'myImg' src='https://i.pinimg.com/originals/91/b7/31/91b73136e86aa49bb9bff09416164246.jpg' alt='header'/>
         <h2>Welcome to your Todo App!</h2>
+        <div className = "formContainer">
+          
+          <TodoForm  addTask = {this.addTask}/>
+        </div>
+        <div className = "listContainer">
+          <TodoList tasks = {this.state.tasks} toggleTask = {this.toggleTask} clearCompleted = {this.clearCompleted}/>
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+
+export default App
