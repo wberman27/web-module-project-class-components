@@ -1,3 +1,39 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column;
+}
 .task.completed {
     text-decoration: line-through;
   }
+
+.todoList{
+    border: 1px solid black;
+    width:80%;
+    text-align: start;
+    padding: 0% 0% 0% 3%;
+    background-color: purple;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    margin: 1% 0% 1% 0%
+}
+input{
+    margin: .5% 2% 1% 0%;
+    box-shadow: 1px 1px 1px white;
+    font-size: 1.2rem;
+    max-width: 15ch;
+}
+h2{
+    color:gold;
+    text-shadow: 1px 1px 2px black;
+}
+button{
+    background-color: turquoise;
+    border-color: white;
+    font-size: 1.1rem;
+}
