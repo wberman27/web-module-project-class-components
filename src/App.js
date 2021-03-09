@@ -72,8 +72,10 @@ class App extends React.Component {
   render() {
     return (
       <div className = "todoApp">
+        <img className= 'myImg' src='https://i.pinimg.com/originals/91/b7/31/91b73136e86aa49bb9bff09416164246.jpg' alt='header'/>
+        <h2>Welcome to your Todo App!</h2>
         <div className = "formContainer">
-          <h2>Welcome to your Todo App!</h2>
+          
           <TodoForm  addTask = {this.addTask}/>
         </div>
         <div className = "listContainer">
