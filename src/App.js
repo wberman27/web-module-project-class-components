@@ -26,8 +26,8 @@ class App extends React.Component {
 
   toggleTask = (clickedId) =>{
     this.setState({
-      tasks: this.state.tasks.map((task)=>{
-        return task.id === clickedId ? {...task, completed: !task.completed} : task;
+      tasks: this.state.tasks.map((item)=>{
+        return item.id === clickedId ? {...item, completed: !item.completed} : item;
       })
     })
   }
@@ -62,4 +62,6 @@ class App extends React.Component {
   }
 }
 
-export default App;
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
